@@ -1,9 +1,25 @@
 
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 const Projects = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      container.scrollLeft += e.deltaY;
+    };
+
+    container.addEventListener('wheel', onWheel, { passive: false });
+    
+    return () => {
+      container.removeEventListener('wheel', onWheel);
+    };
+  }, []);
 
   const projects = [
     {
@@ -36,7 +52,7 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16 px-4"
         >
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-earth mb-4">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-cream mb-4">
             Projects
           </h2>
           <div className="w-20 h-1 bg-sage mx-auto" />
@@ -54,7 +70,7 @@ const Projects = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-cream/50 backdrop-blur-sm rounded-lg overflow-hidden shadow-md w-[400px] flex-shrink-0"
+                className="bg-dark-gray/50 backdrop-blur-sm rounded-lg overflow-hidden shadow-md w-[400px] flex-shrink-0 border border-white/10"
               >
                 <div className="aspect-video relative">
                   <img
@@ -64,15 +80,15 @@ const Projects = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-playfair text-xl font-bold text-earth mb-2">
+                  <h3 className="font-playfair text-xl font-bold text-cream mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-soil/80 mb-4">{project.description}</p>
+                  <p className="text-cream/80 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="bg-sage/20 text-soil px-3 py-1 rounded-full text-sm"
+                        className="bg-sage/20 text-cream/90 px-3 py-1 rounded-full text-sm border border-white/10"
                       >
                         {tag}
                       </span>

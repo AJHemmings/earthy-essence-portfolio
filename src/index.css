@@ -52,9 +52,19 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border scrollbar-hide;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-dark-charcoal text-cream;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

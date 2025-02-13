@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -28,8 +27,20 @@ const Projects = () => {
     if (!container) return;
 
     const onWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      container.scrollLeft += e.deltaY;
+      const containerScrollLeft = container.scrollLeft;
+      const containerScrollWidth = container.scrollWidth;
+      const containerClientWidth = container.clientWidth;
+      const isAtEnd = containerScrollLeft + containerClientWidth >= containerScrollWidth;
+      const isAtStart = containerScrollLeft === 0;
+
+      if (e.deltaY > 0 && !isAtEnd) {
+        e.preventDefault();
+        container.scrollLeft += e.deltaY;
+      }
+      else if (e.deltaY < 0 && !isAtStart) {
+        e.preventDefault();
+        container.scrollLeft += e.deltaY;
+      }
     };
 
     container.addEventListener('wheel', onWheel, { passive: false });

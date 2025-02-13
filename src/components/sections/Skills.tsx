@@ -2,11 +2,15 @@
 import { motion } from "framer-motion";
 
 const Skills = () => {
-  // Define skill categories with images
+  // Add your skill categories here
+  // Each category should have a title and an array of skills
+  // Each skill should have a name and an image path
+  // Image size should be 48x48px (w-12 h-12) for optimal display
   const skillCategories = [
     {
       title: "Frontend",
       skills: [
+        // Replace image paths with your own skill icons (48x48px recommended)
         { name: "React", image: "/placeholder.svg" },
         { name: "TypeScript", image: "/placeholder.svg" },
         { name: "Tailwind CSS", image: "/placeholder.svg" },
@@ -34,7 +38,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="min-h-screen py-20 px-4 bg-sage/10">
+    <section className="min-h-screen py-20 px-4 bg-dark-charcoal">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -44,13 +48,13 @@ const Skills = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-earth mb-4">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-cream mb-4">
             Skills
           </h2>
           <div className="w-20 h-1 bg-sage mx-auto" />
         </motion.div>
 
-        {/* Skills Grid */}
+        {/* Skills Grid - Add new categories above in skillCategories array */}
         <div className="grid md:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <motion.div
@@ -59,9 +63,9 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-cream p-6 rounded-lg shadow-md"
+              className="bg-dark-gray/50 backdrop-blur-sm p-6 rounded-lg shadow-md border border-white/10 hover:border-sage/50 transition-all"
             >
-              <h3 className="font-playfair text-2xl font-bold text-earth mb-4">
+              <h3 className="font-playfair text-2xl font-bold text-cream mb-4">
                 {category.title}
               </h3>
               <div className="grid grid-cols-2 gap-4">
@@ -70,14 +74,15 @@ const Skills = () => {
                     key={skill.name}
                     className="flex flex-col items-center space-y-2"
                   >
-                    <div className="w-12 h-12 rounded-lg overflow-hidden">
+                    {/* Skill Icon - Replace image prop with your icon path */}
+                    <div className="w-12 h-12 rounded-lg overflow-hidden bg-dark-charcoal/50 p-2 border border-white/5">
                       <img
                         src={skill.image}
                         alt={skill.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </div>
-                    <span className="text-soil/80 font-inter text-sm">
+                    <span className="text-cream/80 font-inter text-sm">
                       {skill.name}
                     </span>
                   </div>

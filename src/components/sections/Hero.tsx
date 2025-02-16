@@ -1,10 +1,32 @@
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Hero = () => {
+  // Use scroll progress to control background opacity
+  const { scrollYProgress } = useScroll();
+  const backgroundOpacity = useTransform(scrollYProgress, [0, 0.2], [0.3, 0]);
+
   return (
     <section className="h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-sage/10 to-cream/5 -z-10" />
+      {/* Background Image with Fade Effect */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.3 }}
+        style={{ opacity: backgroundOpacity }}
+        transition={{ duration: 1 }}
+        className="absolute inset-0 -z-20"
+      >
+        <img
+          src="/lovable-uploads/3bf00e87-3ffe-4cc3-b7a1-d188ac3a2f2e.png"
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
+      </motion.div>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-charcoal/95 to-dark-charcoal/90 -z-10" />
+
+      {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

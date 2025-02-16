@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -8,6 +7,7 @@ import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
 import { Button } from "@/components/ui/button";
+import Socials from "@/components/sections/Socials";
 
 const Index = () => {
   // Intersection Observer for fade-in animations
@@ -73,6 +73,9 @@ const Index = () => {
         </div>
         <div id="about" className="bg-gradient-to-b from-dark-gray via-dark-gray to-dark-charcoal">
           <About />
+        </div>
+        <div id="socials">
+          <Socials />
         </div>
         <div id="skills" className="bg-gradient-to-b from-dark-charcoal to-dark-gray">
           <Skills />

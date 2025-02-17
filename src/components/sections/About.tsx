@@ -1,7 +1,25 @@
 
 import { motion } from "framer-motion";
+import { Github, Linkedin } from "lucide-react";
 
 const About = () => {
+  // Add your social links here
+  // To add more social links:
+  // 1. Import the icon from lucide-react
+  // 2. Add a new object to the socialLinks array with icon, label, and href
+  const socialLinks = [
+    {
+      icon: Github,
+      label: "GitHub",
+      href: "https://github.com/yourusername", // Replace with your GitHub URL
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      href: "https://linkedin.com/in/yourusername", // Replace with your LinkedIn URL
+    },
+  ];
+
   return (
     <section className="min-h-screen py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -20,8 +38,8 @@ const About = () => {
         </motion.div>
 
         {/* About Content */}
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          {/* Text Content */}
+        <div className="flex flex-col md:flex-row gap-12 items-start">
+          {/* Text Content and Social Links */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -38,6 +56,27 @@ const About = () => {
             <p className="text-lg leading-relaxed">
               When I'm not coding, you can find me exploring nature trails, practicing meditation, or learning about sustainable technology practices.
             </p>
+
+            {/* Social Links */}
+            <div className="flex gap-6 pt-4">
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-cream/80 hover:text-cream transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <social.icon className="w-6 h-6" />
+                  <span className="text-sm font-medium">{social.label}</span>
+                </motion.a>
+              ))}
+            </div>
           </motion.div>
 
           {/* Profile Image */}

@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -7,7 +8,6 @@ import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
 import { Button } from "@/components/ui/button";
-import Socials from "@/components/sections/Socials";
 
 const Index = () => {
   useEffect(() => {
@@ -68,9 +68,6 @@ const Index = () => {
         </div>
         <div id="about" className="bg-gradient-to-b from-soil/70 via-soil/80 to-earth/50">
           <About />
-        </div>
-        <div id="socials" className="bg-gradient-to-b from-earth/50 to-soil/70">
-          <Socials />
         </div>
         <div id="skills" className="bg-gradient-to-b from-soil/70 to-earth/50">
           <Skills />

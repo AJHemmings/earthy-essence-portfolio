@@ -21,7 +21,7 @@ export default {
     extend: {
       colors: {
         sage: "#F2FCE2",       // Lighter sage
-        clay: "#FDE1D3",       // Soft peach/clay
+        clay: "#FFFFFF",       // Pure white instead of peach
         earth: "#FEC6A1",      // Warm light brown
         cream: "#FFFFFF",      // Pure white
         soil: "#FEF7CD",       // Soft yellow

@@ -20,11 +20,11 @@ export default {
     },
     extend: {
       colors: {
-        sage: "#8B9D83",
-        clay: "#D4C1B4",
-        earth: "#4A3B32",
-        cream: "#F9F6F2",
-        soil: "#2C2320",
+        sage: "#F2FCE2",       // Lighter sage
+        clay: "#FDE1D3",       // Soft peach/clay
+        earth: "#FEC6A1",      // Warm light brown
+        cream: "#FFFFFF",      // Pure white
+        soil: "#FEF7CD",       // Soft yellow
         "dark-charcoal": "#1A1F2C",
         "dark-gray": "#222222",
         border: "hsl(var(--border))",

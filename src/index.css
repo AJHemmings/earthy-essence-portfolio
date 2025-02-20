@@ -55,8 +55,8 @@
     @apply border-border scrollbar-hide;
   }
   body {
-    @apply bg-earth text-cream;
-    background: linear-gradient(135deg, #4A3B32 0%, #2C2320 50%, #8B9D83 100%);
+    @apply bg-earth text-soil;
+    background: linear-gradient(135deg, #FEC6A1 0%, #FEF7CD 50%, #F2FCE2 100%);
   }
 }
 

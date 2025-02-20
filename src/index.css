@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -54,7 +55,8 @@
     @apply border-border scrollbar-hide;
   }
   body {
-    @apply bg-earth text-dark-gray;
+    @apply bg-earth text-cream;
+    background: linear-gradient(135deg, #4A3B32 0%, #2C2320 50%, #8B9D83 100%);
   }
 }
 

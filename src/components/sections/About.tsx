@@ -31,7 +31,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-cream mb-4">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-black mb-4">
             About Me
           </h2>
           <div className="w-20 h-1 bg-sage mx-auto" />
@@ -39,13 +39,13 @@ const About = () => {
 
         {/* About Content */}
         <div className="flex flex-col md:flex-row gap-12 items-start">
-          {/* Text Content and Social Links */}
+          {/* Text Content and Social Links Card - Customize background color, border, and rounded corners here */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.8 }}
-            className="md:w-1/2 space-y-6 text-cream/90"
+            className="md:w-1/2 space-y-6 text-black/90 bg-[#FEC6A1] p-8 rounded-2xl border border-[#8E9196]/20"
           >
             <p className="text-lg leading-relaxed">
               Hello! I'm a junior software developer passionate about creating meaningful digital experiences. With a background in both technology and mindfulness, I bring a unique perspective to every project I undertake.
@@ -65,7 +65,7 @@ const About = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-cream/80 hover:text-cream transition-colors"
+                  className="flex items-center gap-2 text-black/80 hover:text-black transition-colors"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}

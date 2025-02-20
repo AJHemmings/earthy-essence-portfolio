@@ -147,52 +147,54 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16 px-4"
         >
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-cream mb-4">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-black mb-4">
             Projects
           </h2>
           <div className="w-20 h-1 bg-sage mx-auto" />
         </motion.div>
 
-        <div 
-          ref={scrollContainerRef}
-          className="overflow-x-auto scrollbar-hide"
-        >
-          <div className="flex gap-8 p-8 min-w-max">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-dark-gray/50 backdrop-blur-sm rounded-lg overflow-hidden shadow-md w-[400px] flex-shrink-0 border border-white/10 cursor-pointer hover:border-sage/50 transition-colors"
-                onClick={() => setSelectedProject(project)}
-              >
-                <div className="aspect-video relative">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-playfair text-xl font-bold text-cream mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-cream/80 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-sage/20 text-cream/90 px-3 py-1 rounded-full text-sm border border-white/10"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+        <div className="bg-[#FEC6A1] rounded-2xl border border-[#8E9196]/20 p-8">
+          <div 
+            ref={scrollContainerRef}
+            className="overflow-x-auto scrollbar-hide"
+          >
+            <div className="flex gap-8 p-8 min-w-max">
+              {projects.map((project, index) => (
+                <motion.div
+                  key={project.title}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className="bg-dark-gray/50 backdrop-blur-sm rounded-lg overflow-hidden shadow-md w-[400px] flex-shrink-0 border border-white/10 cursor-pointer hover:border-sage/50 transition-colors"
+                  onClick={() => setSelectedProject(project)}
+                >
+                  <div className="aspect-video relative">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="p-6">
+                    <h3 className="font-playfair text-xl font-bold text-cream mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-cream/80 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="bg-sage/20 text-cream/90 px-3 py-1 rounded-full text-sm border border-white/10"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

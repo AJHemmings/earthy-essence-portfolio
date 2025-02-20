@@ -147,10 +147,12 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16 px-4"
         >
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-black mb-4">
-            Projects
-          </h2>
-          <div className="w-20 h-1 bg-sage mx-auto" />
+          <div className="bg-[#FEC6A1] rounded-2xl border border-[#8E9196]/20 p-8 max-w-2xl mx-auto">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-black mb-4">
+              Projects
+            </h2>
+            <div className="w-20 h-1 bg-sage mx-auto" />
+          </div>
         </motion.div>
 
         <div className="bg-[#FEC6A1] rounded-2xl border border-[#8E9196]/20 p-8">

@@ -23,13 +23,13 @@ const About = () => {
   return (
     <section className="min-h-screen py-20 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
+        {/* Section Header - Background Card */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-16 bg-[#FEC6A1] rounded-2xl border border-[#8E9196]/20 p-8 max-w-2xl mx-auto"
         >
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-black mb-4">
             About Me
